@@ -40,8 +40,8 @@ function init() {
             });
 
             clear.addEventListener('click', () => {
-                    newDiv.removeAttribute("style");
-                    current_brightness = 100;
+                newDiv.removeAttribute("style");
+                current_brightness = 100;
             });
 
             container.appendChild(newDiv);
@@ -50,10 +50,10 @@ function init() {
 
     function getRandomHexColor() {
         let initialNumber = Math.round(0xffffff * Math.random()).toString(16);
-        let substringNumber = (6-initialNumber.length);
+        let substringNumber = (6 - initialNumber.length);
         let numberToSubstract = "000000";
-        let finalNumber = numberToSubstract.substring(0,substringNumber);
-        let randomHex= "#" + finalNumber + initialNumber;
+        let finalNumber = numberToSubstract.substring(0, substringNumber);
+        let randomHex = "#" + finalNumber + initialNumber;
         return randomHex;
     }
 
