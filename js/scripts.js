@@ -28,7 +28,6 @@ function init() {
         for (let i = 0; i < square; i++) {
             const randomColor = getRandomHexColor()
             const clear = document.querySelector(".clear");
-            const containerChildren = document.getElementById("gameContainer").childNodes;
 
             let current_brightness = 100
             let newDiv = document.createElement("div");
@@ -41,8 +40,8 @@ function init() {
             });
 
             clear.addEventListener('click', () => {
-                for (i = 0; i < containerChildren.length; i++)
-                    containerChildren[i].removeAttribute("style");
+                    newDiv.removeAttribute("style");
+                    current_brightness = 100;
             });
 
             container.appendChild(newDiv);
@@ -50,8 +49,12 @@ function init() {
     }
 
     function getRandomHexColor() {
-        const randomHex = Math.floor(Math.random() * 16777215).toString(16);
-        return "#" + randomHex;
+        let initialNumber = Math.round(0xffffff * Math.random()).toString(16);
+        let substringNumber = (6-initialNumber.length);
+        let numberToSubstract = "000000";
+        let finalNumber = numberToSubstract.substring(0,substringNumber);
+        let randomHex= "#" + finalNumber + initialNumber;
+        return randomHex;
     }
 
     getUserInput();
