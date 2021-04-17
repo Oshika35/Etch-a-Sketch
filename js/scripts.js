@@ -26,7 +26,7 @@ function init() {
     function createSquares(square = 256) {
         container.innerHTML = "";
         for (let i = 0; i < square; i++) {
-            const randomColor = getRandomHexColor();
+            let randomColor = getRandomHexColor();
             const clear = document.querySelector(".clear");
 
             let current_brightness = 100;
@@ -42,6 +42,7 @@ function init() {
             clear.addEventListener('click', () => {
                 newDiv.removeAttribute("style");
                 current_brightness = 100;
+                randomColor = getRandomHexColor();
             });
 
             container.appendChild(newDiv);
