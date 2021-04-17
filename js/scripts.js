@@ -26,10 +26,10 @@ function init() {
     function createSquares(square = 256) {
         container.innerHTML = "";
         for (let i = 0; i < square; i++) {
-            const randomColor = getRandomHexColor()
+            const randomColor = getRandomHexColor();
             const clear = document.querySelector(".clear");
 
-            let current_brightness = 100
+            let current_brightness = 100;
             let newDiv = document.createElement("div");
             newDiv.className = "square";
 
